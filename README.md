@@ -7,7 +7,7 @@ This Python application reads two VTT (WebVTT) files, combines their entries bas
 - Parses VTT files to extract timestamps and values.
 - Combines entries from two VTT files based on their timestamps.
 - Writes the combined entries to an Excel file with columns for source and translated timestamps and values.
-- Adds an additional "Notes" column in the Excel file.
+- Adds  additional "Reviewer 1 Suggestion" and "Reviewer 2 Suggestion" columns in the Excel file.
 
 ## Requirements
 
@@ -65,7 +65,7 @@ This function combines the source and translated entries based on the following 
 
 ### [`write_to_excel(combined_entries, file_path)`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2Fconvertionvtt.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A61%2C%22character%22%3A4%7D%7D%5D%2C%22afc657e3-ebeb-4477-9cea-9b32cd5fda62%22%5D "Go to definition")
 
-This function writes the combined entries to an Excel file using the [`openpyxl`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2Fconvertionvtt.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A1%2C%22character%22%3A5%7D%7D%5D%2C%22afc657e3-ebeb-4477-9cea-9b32cd5fda62%22%5D "Go to definition") library. It creates a new Excel file with columns for source and translated timestamps and values, and an additional "Notes" column.
+This function writes the combined entries to an Excel file using the [`openpyxl`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2Fconvertionvtt.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A1%2C%22character%22%3A5%7D%7D%5D%2C%22afc657e3-ebeb-4477-9cea-9b32cd5fda62%22%5D "Go to definition") library. It creates a new Excel file with columns for source and translated timestamps and values, and additional "Reviewer 1 Suggestion" and "Reviewer 2 Suggestion" columns.
 
 ### [`main()`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2Fconvertionvtt.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A79%2C%22character%22%3A4%7D%7D%5D%2C%22afc657e3-ebeb-4477-9cea-9b32cd5fda62%22%5D "Go to definition")
 
@@ -92,11 +92,11 @@ This function orchestrates the process by calling the above functions and printi
    ```
 
 3. **Generated `TheOutput.xlsx`:**
-   | Source Timestamp | Source Value   | Translated Timestamp | Translated Value     | Notes |
-   |------------------|----------------|----------------------|----------------------|-------|
-   | 00:00:01.000     | Hello, world!  | 00:00:01.000         | Hola, mundo!         |       |
-   | 00:00:06.000     | This is a test.|                      |                      |       |
-   |                  |                | 00:00:07.000         | Esto es una prueba.  |       |
+   | Source Timestamp | Source Value   | Translated Timestamp | Translated Value     | Reviewer 1 Suggestion |Reviewer 2 Suggestion |
+   |------------------|----------------|----------------------|----------------------|-----------------------|----------------------|
+   | 00:00:01.000     | Hello, world!  | 00:00:01.000         | Hola, mundo!         |                       |                      |
+   | 00:00:06.000     | This is a test.|                      |                      |                       |                      |
+   |                  |                | 00:00:07.000         | Esto es una prueba.  |                       |                      |
 
 
 # AddDisclaimer

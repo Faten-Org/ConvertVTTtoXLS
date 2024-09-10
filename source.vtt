@@ -1,0 +1,7 @@
+WEBVTT
+
+00:00:00.440 --> 00:00:05.160
+This short video is going to take you through the SAML and Skim setup.
+
+00:00:05.520 --> 00:00:27.720
+If you've got a GitHub Enterprise Cloud Emu instance or a Copilot standalone instance that you want to configure in order to get started with these parts of the GitHub platform, I'm going to be taking you through the configuration of SAML and Skim.

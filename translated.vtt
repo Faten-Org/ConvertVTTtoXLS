@@ -1,0 +1,7 @@
+WEBVTT
+
+00:00:00.440 --> 00:00:05.160
+这个简短的视频将带你完成SAML和Skim的设置。
+
+00:00:05.520 --> 00:00:27.720
+如果你有一个GitHub Enterprise Cloud Emu实例或一个独立的Copilot实例，并且你想配置这些GitHub平台的部分，我将带你完成SAML和Skim的配置。

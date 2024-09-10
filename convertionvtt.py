@@ -64,7 +64,8 @@ def write_to_excel(combined_entries, file_path):
     worksheet = workbook.active
     worksheet.title = "Sheet1"
 
-    worksheet.append(["Source Timestamp", "Source Value", "Translated Timestamp", "Translated Value", "Notes"])
+    # Add headers including the new columns
+    worksheet.append(["Source Timestamp", "Source Value", "Translated Timestamp", "Translated Value",  "Reviewer 1 Suggestion", "Reviewer 2 Suggestion"])
 
     for entry in combined_entries:
         worksheet.append([
@@ -72,7 +73,8 @@ def write_to_excel(combined_entries, file_path):
             entry['source_value'],
             entry['translated_timestamp'],
             entry['translated_value'],
-            ""
+            "",  # Placeholder for Reviewer 1 Suggestion
+            ""   # Placeholder for Reviewer 2 Suggestion
         ])
 
     workbook.save(file_path)

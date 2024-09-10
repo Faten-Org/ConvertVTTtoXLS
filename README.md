@@ -98,6 +98,77 @@ This function orchestrates the process by calling the above functions and printi
    | 00:00:06.000     | This is a test.|                      |                      |       |
    |                  |                | 00:00:07.000         | Esto es una prueba.  |       |
 
+
+# AddDisclaimer
+
+This Python application reads a VTT (WebVTT) file called `translated.vtt`, adds `00:00:03` to every timestamp, and writes the modified content to a new VTT file called `translatedPlusDisclaimer.vtt`. Any other value which is not a timestamp remains unchanged.
+
+## Features
+
+- Parses VTT files to extract timestamps.
+- Adds a specified number of seconds (`00:00:03`) to each timestamp.
+- Writes the modified timestamps and other unchanged content to a new VTT file.
+
+## Requirements
+
+- Python 3.x
+
+## Usage
+
+1. **Prepare your VTT file:**
+   - Ensure you have a VTT file named `translated.vtt` in the same directory as the script.
+
+2. **Run the Python script:**
+   - Open a terminal and navigate to the directory where the script is saved.
+   - Run the script using Python:
+     ```sh
+     python AddDisclaimer.py
+     ```
+     Or, if using Python 3:
+     ```sh
+     python3 AddDisclaimer.py
+     ```
+
+3. **Check the output:**
+   - The script will generate a new VTT file named `translatedPlusDisclaimer.vtt` in the same directory.
+
+## Explanation of the Code
+
+### [`add_seconds_to_timestamp(timestamp, seconds)`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2FAddDisclaimer.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A2%2C%22character%22%3A4%7D%7D%5D%2C%225087d892-0c27-4239-8ba6-229853d53334%22%5D "Go to definition")
+
+This function parses a VTT timestamp string into hours, minutes, and seconds, adds the specified number of seconds, and returns the new timestamp string in the same format.
+
+### [`add_disclaimer_to_vtt(input_file, output_file, seconds_to_add)`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2FAddDisclaimer.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A11%2C%22character%22%3A4%7D%7D%5D%2C%225087d892-0c27-4239-8ba6-229853d53334%22%5D "Go to definition")
+
+This function reads the input VTT file line by line. For lines containing timestamps (`-->`), it parses the start and end times, adds the specified number of seconds, and writes the modified timestamps to the output file. For other lines, it writes them unchanged to the output file.
+
+### `main()`
+
+This function orchestrates the process by defining the input and output file names and the number of seconds to add. It calls the [`add_disclaimer_to_vtt`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Ffatenhealy%2FDesktop%2FCSharpCombinationApp%2FVttToExcel%2FAddDisclaimer.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A11%2C%22character%22%3A4%7D%7D%5D%2C%225087d892-0c27-4239-8ba6-229853d53334%22%5D "Go to definition") function to process the VTT file and prints a success message.
+
+## Example
+
+1. **Sample `translated.vtt`:**
+   ```
+   WEBVTT
+
+   00:00:01.000 --> 00:00:05.000
+   Hello, world!
+
+   00:00:06.000 --> 00:00:10.000
+   This is a test.
+   ```
+
+2. **Generated `translatedPlusDisclaimer.vtt`:**
+   ```
+   WEBVTT
+
+   00:00:04.000 --> 00:00:08.000
+   Hello, world!
+
+   00:00:09.000 --> 00:00:13.000
+   This is a test.
+   ```
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
